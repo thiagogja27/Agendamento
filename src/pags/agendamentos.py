@@ -23,7 +23,7 @@ class Agendamentos:
         # Criar novo agendamento
         with st.form("Novo Agendamento"):
             titulo = st.text_input("Título")
-            cliente = st.text_input("Cliente")
+            cliente = st.selectbox("Escolha o Cliente", ["Cliente 1", "Cliente 2"])
             terminal = st.selectbox("Escolha o Terminal", ["Terminal 1", "Terminal 2"])
             tipo_cms = st.selectbox("Escolha o tipo do caminhão", ["Tipo 1", "Tipo 2"])
             descricao = st.text_area("Descrição")
@@ -33,13 +33,13 @@ class Agendamentos:
                 if user_tipo == "admin":
                     titulo = "ADMIN_" + str(user_id) + " " + titulo
                     self.db.cursor.execute(
-                        "INSERT INTO agendamentos (usuario_id, titulo, descricao, data, data_cadastro) VALUES (?, ?, ?, ?, ?)",
-                        (user_id, titulo, descricao, data, time.time()),
+                        "INSERT INTO agendamentos (usuario_id, titulo, descricao, data, data_cadastro, cliente, terminal, tipo_cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                        (user_id, titulo, descricao, data, time.time(), cliente, terminal, tipo_cms),
                     )
                 else:
                     self.db.cursor.execute(
-                        "INSERT INTO agendamentos (usuario_id, titulo, descricao, data, data_cadastro) VALUES (?, ?, ?, ?, ?)",
-                        (user_id, titulo, descricao, data, time.time()),
+                        "INSERT INTO agendamentos (usuario_id, titulo, descricao, data, data_cadastro, cliente, terminal, tipo_cms) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                        (user_id, titulo, descricao, data, time.time(), cliente, terminal, tipo_cms),
                     )
                 self.db.conn.commit()
                 st.success("Agendamento criado com sucesso!")
