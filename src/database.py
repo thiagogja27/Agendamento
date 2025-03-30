@@ -17,7 +17,7 @@ class Database:
                 nome TEXT NOT NULL,
                 email TEXT UNIQUE NOT NULL,
                 senha TEXT NOT NULL,
-                tipo TEXT NOT NULL CHECK(tipo IN ('comum', 'cliente', 'admin')) DEFAULT 'comum'
+                tipo TEXT NOT NULL CHECK(tipo IN ('comum', 'admin')) DEFAULT 'comum'
             )
         ''')
         self.cursor.execute('''
@@ -29,6 +29,8 @@ class Database:
                 data TEXT NOT NULL,
                 data_cadastro TEXT NOT NULL,
                 cliente TEXT NOT NULL,
+                terminal TEXT NOT NULL,
+                tipo_cms TEXT NOT NULL,
                 FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
             )
         ''')
