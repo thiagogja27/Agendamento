@@ -24,13 +24,18 @@ class Database:
             CREATE TABLE IF NOT EXISTS agendamentos (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 usuario_id INTEGER NOT NULL,
-                titulo TEXT NOT NULL,
+                placa TEXT NOT NULL,
                 descricao TEXT NOT NULL,
                 data TEXT NOT NULL,
                 data_cadastro TEXT NOT NULL,
                 cliente TEXT NOT NULL,
                 terminal TEXT NOT NULL,
                 tipo_cms TEXT NOT NULL,
+                nome_motorista TEXT NOT NULL,
+                telefone_motorista TEXT NOT NULL,
+                documento_motorista TEXT NOT NULL,
+                nome_arquivo TEXT NOT NULL,
+                nf_xml TEXT NOT NULL,
                 FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
             )
         ''')
