@@ -31,3 +31,5 @@ class Auth:
         )
         user = self.db.cursor.fetchone()
         return user if user else None
+
+# teste do teste testado
