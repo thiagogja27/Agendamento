@@ -31,3 +31,7 @@ class Auth:
         )
         user = self.db.cursor.fetchone()
         return user if user else None
+
+
+#o guilhermer é um arrombado
+# Exemplo de uso
