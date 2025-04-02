@@ -32,6 +32,7 @@ class Auth:
         user = self.db.cursor.fetchone()
         return user if user else None
 
+# teste do teste testado
 
 # O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
 # então vou deixar assim mesmo. kkkkkkkkkk
@@ -47,4 +48,4 @@ class Auth:
 
 # O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
 # então vou deixar assim mesmo. kkkkkkkkkk
-#tmnnc 
+#tmnnc
