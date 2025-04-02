@@ -33,5 +33,18 @@ class Auth:
         return user if user else None
 
 
-#o guilhermer é um arrombado
-# Exemplo de uso
+# O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
+# então vou deixar assim mesmo. kkkkkkkkkk
+#tmnnc 
+
+# O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
+# então vou deixar assim mesmo. kkkkkkkkkk
+#tmnnc 
+
+# O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
+# então vou deixar assim mesmo. kkkkkkkkkk
+#tmnnc 
+
+# O arrombado do guilherme pediu pra eu fazer o código de autenticação, mas não sei se tá certo
+# então vou deixar assim mesmo. kkkkkkkkkk
+#tmnnc 
