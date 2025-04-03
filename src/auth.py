@@ -2,6 +2,8 @@ import sqlite3
 import hashlib
 from database import Database
 
+# Código para garantir login e segurança dos usuarios
+
 class Auth:
     def __init__(self):
         self.db = Database()

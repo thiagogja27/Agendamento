@@ -2,6 +2,9 @@ from database import Database
 from auth import Auth
 import hashlib
 
+# Usado apenas para cirar um usuario (lembrando, alterar conforme necessidade.)
+# (NOME, EMAIL, SENHA, TIPO)
+
 # Função para adicionar usuários manualmente
 def criar_usuarios_iniciais():
     db = Database()
