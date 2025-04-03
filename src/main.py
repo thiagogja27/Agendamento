@@ -4,6 +4,8 @@ from pags.dashboard import Dashboard
 from pags.agendamentos import Agendamentos
 from pags.suporte import Suporte
 
+# Tela principal para rodar o código, ela que faz a "Distribuição" para as outras páginas. Importante manter o controle do versionamento dessa página.
+
 st.set_page_config(page_title="Agendamentos", layout="centered")
 
 class App:

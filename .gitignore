@@ -1,3 +1,4 @@
+# Sempre adicionar um arquivo/pasta que não precisa ser levado para o github, como as que estão aqui:
 venv/
 __pycache__/
 *.xml

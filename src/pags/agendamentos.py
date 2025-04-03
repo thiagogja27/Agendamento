@@ -4,6 +4,8 @@ from database import Database
 import time
 from datetime import date
 
+# Essa tela é para o cadastro de agendamentos
+
 class Agendamentos:
     def __init__(self):
         self.db = Database()

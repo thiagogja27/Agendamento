@@ -1,6 +1,8 @@
 import sqlite3
 import hashlib
 
+# Criando o banco de dados, é util para manter o código organizado e sempre encontrar a tabela que precisamos. qlqr alteração aqui precisa ser revisada
+
 DB_NAME = "agendamentos.db"
 
 class Database:
