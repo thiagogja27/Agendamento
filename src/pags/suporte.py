@@ -12,10 +12,9 @@ from database import Database
 # Carrega variáveis do .env
 load_dotenv()
 
-EMAIL_REMETENTE = os.getenv("EMAIL_REMETENTE", "")
-SENHA = os.getenv("SENHA", "")
-EMAILS_DESTINO = os.getenv("EMAILS_DESTINO", "").split(",") if os.getenv("EMAILS_DESTINO") else []
-
+EMAIL_REMETENTE = os.getenv("EMAIL_REMETENTE")
+SENHA = os.getenv("SENHA")
+EMAILS_DESTINO = os.getenv("EMAILS_DESTINO").split(",")
 SMTP_SERVIDOR = "smtp.gmail.com"
 SMTP_PORTA = 587
 
