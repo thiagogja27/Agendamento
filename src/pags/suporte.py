@@ -14,11 +14,7 @@ load_dotenv()
 
 EMAIL_REMETENTE = os.getenv("EMAIL_REMETENTE")
 SENHA = os.getenv("SENHA")
-EMAILS_DESTINO = os.getenv("EMAILS_DESTINO")
-if EMAILS_DESTINO:
-    EMAILS_DESTINO = EMAILS_DESTINO.split(",")
-else:
-    EMAILS_DESTINO = []
+EMAILS_DESTINO = os.getenv("EMAILS_DESTINO", "").split(",") if os.getenv("EMAILS_DESTINO") else []
 SMTP_SERVIDOR = "smtp.gmail.com"
 SMTP_PORTA = 587
 
