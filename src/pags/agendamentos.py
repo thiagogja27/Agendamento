@@ -108,19 +108,19 @@ class Agendamentos:
                     try:
                         chave_acesso = root.find(".//{http://www.portalfiscal.inf.br/nfe}infNFe", namespaces=ns).attrib["Id"]
                     except Exception as e:
-                        chave_acesso = "No Info"
+                        chave_acesso == "No Info"
 
                     # Número da nota
                     try:
                         numero_nota = root.find(".//{http://www.portalfiscal.inf.br/nfe}ide/{http://www.portalfiscal.inf.br/nfe}nNF", namespaces=ns).text
                     except Exception as e:
-                        numero_nota = "No Info"
+                        numero_nota == "No Info"
                     
                     # Série da nota
                     try:
                         serie_nota = root.find(".//{http://www.portalfiscal.inf.br/nfe}ide/{http://www.portalfiscal.inf.br/nfe}serie", namespaces=ns).text
                     except Exception as e:
-                        serie_nota = "No Info"
+                        serie_nota == "No Info"
 
                     # Produto da nota - Supondo que a estrutura seja algo assim (ajustar conforme necessário)
                     try:
@@ -128,27 +128,27 @@ class Agendamentos:
                         produto_nota = [prod.find("{http://www.portalfiscal.inf.br/nfe}prod/{http://www.portalfiscal.inf.br/nfe}xProd", namespaces=ns).text for prod in produtos]
                         prod_nome = produto_nota[0]
                     except Exception as e:
-                        produtos = "No Info"
-                        produto_nota = "No Info"
-                        prod_nome = "No Info"
+                        produtos == "No Info"
+                        produto_nota == "No Info"
+                        prod_nome == "No Info"
 
                     # Quantidade do produto
                     try:
                         quantidade_nota = [prod.find("{http://www.portalfiscal.inf.br/nfe}prod/{http://www.portalfiscal.inf.br/nfe}qCom", namespaces=ns).text for prod in produtos]
                         quantidade = quantidade_nota[0]
                     except Exception as e:
-                        quantidade = "No Info"
+                        quantidade == "No Info"
 
                     # CNPJ do exportador, emitente, retirada, transportador, entrega
                     try:
                         exportador_nota = root.find(".//{http://www.portalfiscal.inf.br/nfe}dest/{http://www.portalfiscal.inf.br/nfe}CNPJ", namespaces=ns)
-                        if exportador_nota is "No Info":
+                        if exportador_nota is None:
                             exportador_nota = root.find(".//{http://www.portalfiscal.inf.br/nfe}dest/{http://www.portalfiscal.inf.br/nfe}CPF", namespaces=ns)
 
                         # Se encontrar a tag, acessa o texto, caso contrário, define como "No Info"
                         exportador_nota = exportador_nota.text if exportador_nota is not None else "No Info"
                     except Exception as e:
-                        exportador_nota = "No Info"
+                        exportador_nota == "No Info"
                         
                     # CNPJ emitente
                     try:
@@ -159,7 +159,7 @@ class Agendamentos:
                         # Se encontrar a tag, acessa o texto, caso contrário, define como None
                         emitente_nota = emitente_nota.text if emitente_nota is not None else "No Info"
                     except Exception as e:
-                        emitente_nota = "No Info"
+                        emitente_nota == "No Info"
 
                     # CNPJ retirada
                     try:
@@ -170,7 +170,7 @@ class Agendamentos:
                         # Se encontrar a tag, acessa o texto, caso contrário, define como None
                         retirada_nota = retirada_nota.text if retirada_nota is not None else "No Info"
                     except Exception as e:
-                        retirada_nota = "No Info"
+                        retirada_nota == "No Info"
                     
                     # CNPJ transportadora
                     try:
@@ -181,19 +181,19 @@ class Agendamentos:
                         # Se encontrar a tag, acessa o texto, caso contrário, define como None
                         transportador_nota = transportador_nota.text if transportador_nota is not None else "No Info"
                     except Exception as e:
-                        transportador_nota = "No Info"
+                        transportador_nota == "No Info"
                         
                     # CNPJ entrega
                     try:
                         entrega_nota = root.find(".//{http://www.portalfiscal.inf.br/nfe}entrega/{http://www.portalfiscal.inf.br/nfe}CNPJ", namespaces=ns).text if root.find(".//{http://www.portalfiscal.inf.br/nfe}entrega", namespaces=ns) else "No Info"
                     except Exception as e:
-                        entrega_nota = "No Info"
+                        entrega_nota == "No Info"
 
                     # Informações complementares
                     try:
                         info_cpl = root.find(".//{http://www.portalfiscal.inf.br/nfe}infCpl", namespaces=ns).text if root.find(".//{http://www.portalfiscal.inf.br/nfe}infCpl", namespaces=ns) else "No Info"
                     except Exception as e:
-                        info_cpl = "No Info" 
+                        info_cpl == "No Info" 
 
                     print(chave_acesso, numero_nota, serie_nota, prod_nome, quantidade, exportador_nota, emitente_nota, retirada_nota, transportador_nota,
                           entrega_nota, info_cpl)
