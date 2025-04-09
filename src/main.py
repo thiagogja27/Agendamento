@@ -44,22 +44,20 @@ class App:
     def show_dashboard(self):
         """Painel de navegação após login"""
         user_tipo = st.session_state["auth_user"]["tipo"]
+        usuario_id = st.session_state["auth_user"]["id"]
 
         # Exibe o nome do usuário logado
         st.sidebar.title(f"Bem-vindo, {st.session_state['auth_user']['nome']}!")
 
         # Menu de navegação
-        if user_tipo == "admin":
-            paginas = ["Dashboard", "Agendamentos", "Suporte"]
-        else:
-            paginas = ["Dashboard", "Agendamentos", "Suporte"]
+        paginas = ["Dashboard", "Agendamentos", "Suporte"]  # Se quiser personalizar por tipo, pode ajustar aqui
 
         # Navegação entre as páginas usando radio buttons
         page = st.sidebar.radio("Navegação", paginas)
 
         # Controlando a navegação
         if page == "Dashboard":
-            Dashboard().show()
+            Dashboard(usuario_id).show()  # ✅ CORRIGIDO: agora passando o ID do usuário
         elif page == "Agendamentos":
             Agendamentos().show()
         elif page == "Suporte":

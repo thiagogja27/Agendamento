@@ -1,0 +1,7 @@
+deactivate #desativar ambiente virtual
+.\env\Scripts\activate  # ativar ambiente virtual com a depedencias
+pip uninstall requirements.txt #desintalar pacotes
+python src\database.py
+
+streamlit run src/main.py
+
